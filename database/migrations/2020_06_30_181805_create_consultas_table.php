@@ -16,7 +16,7 @@ class CreateConsultasTable extends Migration
         Schema::create('consultas', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->bigIncrements('id');
-            $table->dateTime('fecha_nacimiento')->nullable();
+            $table->dateTime('fecha')->nullable();
             $table->text('diagnostico');
             $table->text('tratamiento');
             $table->bigInteger('paciente_id')->unsigned();
