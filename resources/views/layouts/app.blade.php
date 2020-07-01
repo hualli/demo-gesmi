@@ -117,14 +117,14 @@
 
 
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="{{ route('pacientes.index') }}" class="nav-link">
               <i class="nav-icon fas fa-user-friends"></i>
               <p>Pacientes</p>
             </a>
           </li>
 
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="{{ route('obrassociales.index') }}" class="nav-link">
               <i class="nav-icon fas fa-hand-holding-medical"></i>
               <p>Obras Sociales</p>
             </a>
@@ -153,7 +153,7 @@
   <!-- /.content-wrapper -->
 
   <footer class="main-footer">
-    <strong>Copyright &copy; 2018-2020 <a href="https://ciatware.com">CIATWare</a>.</strong>
+    <strong>Copyright &copy; 2018-2020 <a href="https://ciatware.com" target="_blank">CIATWare</a>.</strong>
   </footer>
 
   <!-- Control Sidebar -->
