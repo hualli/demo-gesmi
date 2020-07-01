@@ -11,4 +11,10 @@ class Paciente extends Model
     protected $fillable = [
       'nombre', 'apellido', 'fecha_nacimiento', 'domicilio', 'telefono_fijo', 'telefono_celular','estado', 'obrasocial_id'
     ];
+
+    //Relacion con Obra Social
+    public function obrasocial()
+    {
+        return $this->belongsTo('App\ObraSocial');
+    }
 }

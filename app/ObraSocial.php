@@ -12,5 +12,10 @@ class ObraSocial extends Model
       'nombre', 'estado'
     ];
 
+    // Relacion con Pacientes
+    public function pacientes()
+    {
+        return $this->hasMany('App\Paciente');
+    }
 
 }
