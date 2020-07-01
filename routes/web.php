@@ -11,15 +11,51 @@
 |
 */
 
+// Route::get('/', function () {
+//     return view('auth/login');
+// });
+
 Route::get('/', function () {
-    return view('auth/login');
+    if( Auth::user() ) //se valida si esta logueado
+    {
+        return redirect('pacientes');
+    }
+    else{
+        return redirect('/login');
+    }
 });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'PacienteController@index')->name('home');
 
 Route::middleware(['auth'])->group(function(){
 
-  
+  //Pacientes
+  Route::get('pacientes', 'PacienteController@index')->name('pacientes.index');
+
+  Route::get('pacientes/create', 'PacienteController@create')->name('pacientes.create');
+
+  Route::post('pacientes/store', 'PacienteController@store')->name('pacientes.store');
+
+  Route::get('pacientes/{paciente}', 'PacienteController@show')->name('pacientes.show');
+
+  Route::get('pacientes/{paciente}/edit', 'PacienteController@edit')->name('pacientes.edit');
+
+  Route::put('pacientes/{paciente}', 'PacienteController@update')->name('pacientes.update');
+
+
+  //Obras Sociales
+  Route::get('obrassociales', 'ObrasocialController@index')->name('obrassociales.index');
+
+  Route::get('obrassociales/create', 'ObrasocialController@create')->name('obrassociales.create');
+
+  Route::post('obrassociales/store', 'ObrasocialController@store')->name('obrassociales.store');
+
+  Route::get('obrassociales/{obrasocial}', 'ObrasocialController@show')->name('obrassociales.show');
+
+  Route::get('obrassociales/{obrasocial}/edit', 'ObrasocialController@edit')->name('obrassociales.edit');
+
+  Route::put('obrassociales/{obrasocial}', 'ObrasocialController@update')->name('obrassociales.update');
+
 });
