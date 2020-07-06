@@ -59,6 +59,21 @@
                 <div class="row">
                   <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
                     <div class="form-group">
+                      <label>DNI / CUIL / CUIT</label>
+                      <input type="text" class="form-control" placeholder="Enter ..." id="dni_cuil_cuit" name="dni_cuil_cuit" value="{{ $paciente->dni_cuil_cuit }}">
+                    </div>
+                  </div>
+                  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                    <div class="form-group">
+                      <label>E-mail</label>
+                      <input type="text" class="form-control" placeholder="Enter ..." id="email" name="email" value="{{ $paciente->email }}">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                    <div class="form-group">
                       <label>Tel&eacute;fono Fijo</label>
                       <input type="text" class="form-control" placeholder="Enter ..." id="telefono_fijo" name="telefono_fijo" value="{{ $paciente->telefono_fijo }}">
                     </div>
@@ -85,6 +100,21 @@
                           <?php endif; ?>
                         @endforeach
                       </select>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                    <div class="form-group">
+                      <label>Plan</label>
+                      <input type="text" class="form-control" placeholder="Enter ..." id="plan" name="plan" value="{{ $paciente->plan }}">
+                    </div>
+                  </div>
+                  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                    <div class="form-group">
+                      <label>N° de Afiliado</label>
+                      <input type="text" class="form-control" placeholder="Enter ..." id="numero_afiliado" name="numero_afiliado" value="{{ $paciente->numero_afiliado }}">
                     </div>
                   </div>
                 </div>

@@ -27,5 +27,9 @@ class ObrasSocialesTableSeeder extends Seeder
       ObraSocial::create([
           'nombre' => 'Sancor Salud',
       ]);
+
+      ObraSocial::create([
+          'nombre' => 'Particular',
+      ]);
     }
 }

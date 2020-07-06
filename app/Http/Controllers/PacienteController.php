@@ -44,10 +44,14 @@ class PacienteController extends Controller
       $paciente = new Paciente;
       $paciente->apellido = $request->apellido;
       $paciente->nombre = $request->nombre;
+      $paciente->dni_cuil_cuit = $request->dni_cuil_cuit;
       $paciente->fecha_nacimiento = $request->fecha_nacimiento;
       $paciente->domicilio = $request->domicilio;
       $paciente->telefono_fijo = $request->telefono_fijo;
       $paciente->telefono_celular = $request->telefono_celular;
+      $paciente->email = $request->email;
+      $paciente->plan = $request->plan;
+      $paciente->numero_afiliado = $request->numero_afiliado;
       $paciente->obrasocial_id = $request->obrasocial_id;
       $paciente->save();
 
@@ -93,10 +97,14 @@ class PacienteController extends Controller
       $paciente = Paciente::find($id);
       $paciente->apellido = $request->apellido;
       $paciente->nombre = $request->nombre;
+      $paciente->dni_cuil_cuit = $request->dni_cuil_cuit;
       $paciente->fecha_nacimiento = $request->fecha_nacimiento;
       $paciente->domicilio = $request->domicilio;
       $paciente->telefono_fijo = $request->telefono_fijo;
       $paciente->telefono_celular = $request->telefono_celular;
+      $paciente->email = $request->email;
+      $paciente->plan = $request->plan;
+      $paciente->numero_afiliado = $request->numero_afiliado;
       $paciente->obrasocial_id = $request->obrasocial_id;
       $paciente->save();
       return redirect()->route('pacientes.index');

@@ -9,7 +9,7 @@ class Paciente extends Model
     protected $table = "pacientes";
 
     protected $fillable = [
-      'nombre', 'apellido', 'fecha_nacimiento', 'domicilio', 'telefono_fijo', 'telefono_celular','estado', 'obrasocial_id'
+      'nombre', 'apellido', 'dni_cuil_cuit', 'fecha_nacimiento', 'domicilio', 'telefono_fijo', 'telefono_celular', 'email', 'plan', 'numero_afiliado', 'estado', 'obrasocial_id'
     ];
 
     //Relacion con Obra Social

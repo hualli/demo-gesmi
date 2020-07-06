@@ -29,12 +29,12 @@
                 <div class="col-md-12">
                   <br>
                   <p><b>Nombre: </b>{{$paciente->apellido}}, {{$paciente->nombre}}</p>
-                  <p><b>Edad: </b>{{\Carbon\Carbon::parse($paciente->fecha_nacimiento)->age}}</p>
-                  <p><b>Fecha de Nacimiento: </b>{{ date('d-m-Y', strtotime($paciente->fecha_nacimiento)) }}</p>
+                  <p><b>Fecha de Nacimiento: </b>{{ date('d-m-Y', strtotime($paciente->fecha_nacimiento)) }} / {{\Carbon\Carbon::parse($paciente->fecha_nacimiento)->age}} a&ntilde;os</p>
+                  <p><b>DNI / CUIL / CUIT: </b>{{$paciente->dni_cuil_cuit}}</p>
                   <p><b>Domicilio: </b>{{$paciente->domicilio}}</p>
-                  <p><b>Tel&eacute;fono Fijo: </b>{{$paciente->telefono_fijo}}</p>
-                  <p><b>Tel&eacute;fono Celular: </b>{{$paciente->telefono_celular}}</p>
-                  <p><b>Obra Social: </b>{{$paciente->obrasocial->nombre}}</p>
+                  <p><b>Tel&eacute;fonos: </b>{{$paciente->telefono_fijo}} / {{$paciente->telefono_celular}}</p>
+                  <p><b>E-mail: </b>{{$paciente->email}}</p>
+                  <p><b>Obra Social: </b>{{$paciente->obrasocial->nombre}} - {{$paciente->plan}} - {{$paciente->numero_afiliado}}</p>
                   <br>
 
                 </div>
