@@ -58,4 +58,12 @@ Route::middleware(['auth'])->group(function(){
 
   Route::put('obrassociales/{obrasocial}', 'ObrasocialController@update')->name('obrassociales.update');
 
+
+  //Consultas
+  Route::get('consultas', 'ConsultaController@index')->name('consultas.index');
+
+  Route::get('consultas/create', 'ConsultaController@create')->name('consultas.create');
+
+  Route::post('consultas/store', 'ConsultaController@store')->name('consultas.store');
+
 });
