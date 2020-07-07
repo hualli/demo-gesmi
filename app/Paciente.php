@@ -17,4 +17,10 @@ class Paciente extends Model
     {
         return $this->belongsTo('App\ObraSocial');
     }
+
+    //Relacion con Consultas
+    public function consultas()
+    {
+        return $this->hasMany('App\Consulta');
+    }
 }

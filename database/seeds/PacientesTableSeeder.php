@@ -16,7 +16,7 @@ class PacientesTableSeeder extends Seeder
           'nombre' => 'Juan',
           'apellido' => 'Perez',
           'telefono_celular' => '381-155235689',
-          'plan' = 'Plan ejemplo',
+          'plan' => 'Plan ejemplo',
           'numero_afiliado' => '111111',
           'obrasocial_id' => '1',
       ]);
@@ -25,7 +25,7 @@ class PacientesTableSeeder extends Seeder
           'nombre' => 'Jorge',
           'apellido' => 'García',
           'telefono_celular' => '381-155985421',
-          'plan' = 'Plan ejemplo',
+          'plan' => 'Plan ejemplo',
           'numero_afiliado' => '111111',
           'obrasocial_id' => '2',
       ]);
@@ -34,7 +34,7 @@ class PacientesTableSeeder extends Seeder
           'nombre' => 'Pedro',
           'apellido' => 'Gómez',
           'telefono_celular' => '381-155985414',
-          'plan' = 'Plan ejemplo',
+          'plan' => 'Plan ejemplo',
           'numero_afiliado' => '111111',
           'obrasocial_id' => '1',
       ]);
@@ -43,7 +43,7 @@ class PacientesTableSeeder extends Seeder
           'nombre' => 'Matías',
           'apellido' => 'Perez',
           'telefono_celular' => '381-155321203',
-          'plan' = 'Plan ejemplo',
+          'plan' => 'Plan ejemplo',
           'numero_afiliado' => '111111',
           'obrasocial_id' => '3',
       ]);
@@ -52,7 +52,7 @@ class PacientesTableSeeder extends Seeder
           'nombre' => 'Pablo',
           'apellido' => 'Véliz',
           'telefono_celular' => '381-155655421',
-          'plan' = 'Plan ejemplo',
+          'plan' => 'Plan ejemplo',
           'numero_afiliado' => '111111',
           'obrasocial_id' => '3',
       ]);
@@ -61,7 +61,7 @@ class PacientesTableSeeder extends Seeder
           'nombre' => 'María',
           'apellido' => 'Albarracín',
           'telefono_celular' => '381-155982514',
-          'plan' = 'Plan ejemplo',
+          'plan' => 'Plan ejemplo',
           'numero_afiliado' => '111111',
           'obrasocial_id' => '4',
       ]);
@@ -70,7 +70,7 @@ class PacientesTableSeeder extends Seeder
           'nombre' => 'Mercedes',
           'apellido' => 'Gauna',
           'telefono_celular' => '381-155322103',
-          'plan' = 'Plan ejemplo',
+          'plan' => 'Plan ejemplo',
           'numero_afiliado' => '111111',
           'obrasocial_id' => '1',
       ]);
@@ -79,7 +79,7 @@ class PacientesTableSeeder extends Seeder
           'nombre' => 'Paola',
           'apellido' => 'Tévez',
           'telefono_celular' => '381-155985421',
-          'plan' = 'Plan ejemplo',
+          'plan' => 'Plan ejemplo',
           'numero_afiliado' => '111111',
           'obrasocial_id' => '4',
       ]);
@@ -88,7 +88,7 @@ class PacientesTableSeeder extends Seeder
           'nombre' => 'Myrna',
           'apellido' => 'Díaz',
           'telefono_celular' => '381-155875421',
-          'plan' = 'Plan ejemplo',
+          'plan' => 'Plan ejemplo',
           'numero_afiliado' => '111111',
           'obrasocial_id' => '2',
       ]);
@@ -97,7 +97,7 @@ class PacientesTableSeeder extends Seeder
           'nombre' => 'Fernando',
           'apellido' => 'Díaz',
           'telefono_celular' => '381-155455623',
-          'plan' = 'Plan ejemplo',
+          'plan' => 'Plan ejemplo',
           'numero_afiliado' => '111111',
           'obrasocial_id' => '2',
       ]);
