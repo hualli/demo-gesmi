@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Consulta;
+use App\Paciente;
 
 class ConsultaController extends Controller
 {
@@ -45,7 +47,9 @@ class ConsultaController extends Controller
      */
     public function show($id)
     {
-        //
+      $consultas = Consulta::where('paciente_id','like',$id)->orderBy('fecha', 'DESC')->get();
+      $paciente = Paciente::find($id);
+      return view('consultas.show', compact('consultas','paciente'));
     }
 
     /**

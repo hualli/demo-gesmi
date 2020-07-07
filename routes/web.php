@@ -66,4 +66,6 @@ Route::middleware(['auth'])->group(function(){
 
   Route::post('consultas/store', 'ConsultaController@store')->name('consultas.store');
 
+  Route::get('consultas/{consulta}', 'ConsultaController@show')->name('consultas.show');
+
 });

@@ -41,8 +41,9 @@
                         <th>&nbsp;</th>
                         <th>Nombre</th>
                         <th>Tel&eacute;fono Celular</th>
-                        <th>&nbsp;</th>
-                        <th style="width: 5%">
+                        <th style="width: 6%;">&nbsp;</th>
+                        <th style="width: 6%;">&nbsp;</th>
+                        <th style="width: 6%;">
                           <a href="{{ route('pacientes.create') }}" class="btn btn-primary btn-block"><i class="fas fa-plus"></i></a>
                         </th>
                       </tr>
@@ -53,10 +54,13 @@
                           <td>{{$loop->iteration}}</td>
                           <td>{{ $paciente->apellido }}, {{ $paciente->nombre }}</td>
                           <td>{{ $paciente->telefono_celular }}</td>
-                          <td style="width: 5%">
+                          <td style="width: 6%;">
+                            <a href="{{ route('consultas.show', $paciente->id) }}" class="btn btn-dark btn-block"><i class="fas fa-notes-medical"></i></a>
+                          </td>
+                          <td style="width: 6%;">
                             <a href="{{ route('pacientes.show', $paciente->id) }}" class="btn btn-success btn-block"><i class="far fa-eye"></i></a>
                           </td>
-                          <td style="width: 5%">
+                          <td style="width: 6%;">
                             <a href="{{ route('pacientes.edit', $paciente->id) }}" class="btn btn-warning btn-block"><i class="fas fa-pencil-alt" style="color:white"></i></a>
                           </td>
                         </tr>
