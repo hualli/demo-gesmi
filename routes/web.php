@@ -60,12 +60,15 @@ Route::middleware(['auth'])->group(function(){
 
 
   //Consultas
-  Route::get('consultas', 'ConsultaController@index')->name('consultas.index');
 
-  Route::get('consultas/create', 'ConsultaController@create')->name('consultas.create');
+  Route::get('consultas/{paciente}', 'ConsultaController@show')->name('consultas.show');
+
+  Route::get('consultas/{paciente}/nueva', 'ConsultaController@nueva')->name('consultas.nueva');
 
   Route::post('consultas/store', 'ConsultaController@store')->name('consultas.store');
 
-  Route::get('consultas/{consulta}', 'ConsultaController@show')->name('consultas.show');
+  Route::get('consultas/{paciente}/editar', 'ConsultaController@editar')->name('consultas.editar');
+
+  Route::put('consultas/{consulta}', 'ConsultaController@update')->name('consultas.update');
 
 });

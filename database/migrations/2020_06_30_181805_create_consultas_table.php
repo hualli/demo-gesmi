@@ -18,8 +18,9 @@ class CreateConsultasTable extends Migration
             $table->bigIncrements('id');
             $table->dateTime('fecha')->nullable();
             $table->decimal('coseguro', 9, 2)->default(0.00);
-            $table->text('diagnostico');
-            $table->text('tratamiento');
+            $table->text('diagnostico')->nullable();
+            $table->text('tratamiento')->nullable();
+            $table->enum('estado', ['pendiente', 'atendido', 'cancelado'])->default('pendiente');
             $table->bigInteger('paciente_id')->unsigned();
             $table->bigInteger('tipo_consulta_id')->unsigned();
             $table->bigInteger('user_id')->unsigned();

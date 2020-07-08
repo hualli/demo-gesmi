@@ -9,7 +9,7 @@ class Consulta extends Model
     protected $table = "consultas";
 
     protected $fillable = [
-      'fecha', 'coseguro', 'diagnostico', 'tratamiento', 'paciente_id', 'tipo_consulta_id', 'user_id'
+      'fecha', 'coseguro', 'diagnostico', 'tratamiento', 'paciente_id', 'tipo_consulta_id', 'user_id', 'estado'
     ];
 
     //Relacion con Paciente

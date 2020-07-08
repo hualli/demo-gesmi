@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Consulta;
 use App\Paciente;
+use App\TipoConsulta;
 
 class ConsultaController extends Controller
 {
@@ -25,7 +26,6 @@ class ConsultaController extends Controller
      */
     public function create()
     {
-        //
     }
 
     /**
@@ -36,7 +36,15 @@ class ConsultaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $consulta = new Consulta;
+      $consulta->fecha = date("Y-m-d H:i:s");
+      $consulta->coseguro = $request->coseguro;
+      $consulta->paciente_id = $request->paciente_id;
+      $consulta->tipo_consulta_id = $request->tipo_consulta_id;
+      $consulta->user_id = auth()->id();
+      $consulta->save();
+
+      return redirect()->route('consultas.show', $consulta->paciente_id);
     }
 
     /**
@@ -72,7 +80,15 @@ class ConsultaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $consulta = Consulta::find($id);
+      $consulta->diagnostico = $request->diagnostico;
+      $consulta->tratamiento = $request->tratamiento;
+      $consulta->tipo_consulta_id = $request->tipo_consulta_id;
+      $consulta->user_id = auth()->id();
+      $consulta->estado = 'atendido';
+      $consulta->save();
+
+      return redirect()->route('consultas.show', $consulta->paciente_id);
     }
 
     /**
@@ -84,5 +100,26 @@ class ConsultaController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+
+    public function nueva($id)
+    {
+        $paciente = Paciente::find($id);
+        $tipoconsultas = TipoConsulta::orderBy('nombre', 'ASC')
+                        ->select('nombre as nombre', 'id as id')
+                        ->get();
+        return view('consultas.nueva', compact('paciente', 'tipoconsultas'));
+    }
+
+    public function editar($id)
+    {
+        $consulta = Consulta::find($id);
+        $tipoconsultas = TipoConsulta::orderBy('nombre', 'ASC')
+                        ->select('nombre as nombre', 'id as id')
+                        ->get();
+        $paciente = Paciente::find($consulta->paciente_id);
+
+        return view('consultas.editar', compact('consulta', 'tipoconsultas', 'paciente'));
     }
 }
