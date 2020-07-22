@@ -65,8 +65,26 @@
                 <div class="row">
                   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                     <div class="form-group">
+                      <label>Motivo de consulta</label>
+                      <textarea class="form-control" placeholder="Enter ..." id="motivo_consulta" name="motivo_consulta" rows="3">{{$consulta->motivo_consulta}}</textarea>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                    <div class="form-group">
+                      <label>Estudios</label>
+                      <textarea class="form-control" placeholder="Enter ..." id="estudios" name="estudios" rows="3">{{$consulta->estudios}}</textarea>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                    <div class="form-group">
                       <label>Diagn&oacute;stico</label>
-                      <textarea class="form-control" placeholder="Enter ..." id="diagnostico" name="diagnostico" value="{{$consulta->diagnostico}}" rows="3"></textarea>
+                      <textarea class="form-control" placeholder="Enter ..." id="diagnostico" name="diagnostico" rows="3">{{$consulta->diagnostico}}</textarea>
                     </div>
                   </div>
                 </div>
@@ -75,7 +93,7 @@
                   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                     <div class="form-group">
                       <label>Tratamiento</label>
-                      <textarea class="form-control" placeholder="Enter ..." id="tratamiento" name="tratamiento" value="{{$consulta->tratamiento}}" rows="3"></textarea>
+                      <textarea class="form-control" placeholder="Enter ..." id="tratamiento" name="tratamiento" rows="3">{{$consulta->tratamiento}}</textarea>
                     </div>
                   </div>
                 </div>

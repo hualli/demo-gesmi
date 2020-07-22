@@ -62,10 +62,16 @@
                 </div>
 
                 <div class="row">
-                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
                     <div class="form-group">
                       <label>Coseguro</label>
                       <input type="text" class="form-control" placeholder="Enter ..." id="coseguro" name="coseguro">
+                    </div>
+                  </div>
+                  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                    <div class="form-group">
+                      <label>Motivo de consulta</label>
+                      <input type="text" class="form-control" placeholder="Enter ..." id="motivo_consulta" name="motivo_consulta">
                     </div>
                   </div>
                 </div>

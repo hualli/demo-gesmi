@@ -43,6 +43,10 @@
               <div class="row">
                 <div class="col-md-12">
                   <br>
+                  <p><b>Motivo de consulta: </b>{{ $consulta->motivo_consulta }}</p>
+                  <br>
+                  <p><b>Estudios: </b>{{ $consulta->estudios }}</p>
+                  <br>
                   <p><b>Diagn&oacute;stico: </b>{{ $consulta->diagnostico }}</p>
                   <br>
                   <p><b>Tratamiento: </b>{{ $consulta->tratamiento }}</p>

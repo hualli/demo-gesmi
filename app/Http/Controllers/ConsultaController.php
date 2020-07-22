@@ -39,6 +39,7 @@ class ConsultaController extends Controller
       $consulta = new Consulta;
       $consulta->fecha = date("Y-m-d H:i:s");
       $consulta->coseguro = $request->coseguro;
+      $consulta->motivo_consulta = $request->motivo_consulta;
       $consulta->paciente_id = $request->paciente_id;
       $consulta->tipo_consulta_id = $request->tipo_consulta_id;
       $consulta->user_id = auth()->id();
@@ -81,6 +82,7 @@ class ConsultaController extends Controller
     public function update(Request $request, $id)
     {
       $consulta = Consulta::find($id);
+      $consulta->estudios = $request->estudios;
       $consulta->diagnostico = $request->diagnostico;
       $consulta->tratamiento = $request->tratamiento;
       $consulta->tipo_consulta_id = $request->tipo_consulta_id;
