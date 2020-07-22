@@ -24,13 +24,15 @@
                   <h3 class="card-title">Listado de Obras Sociales</h3>
 
                   <div class="card-tools">
-                    <div class="input-group input-group-sm" style="width: 150px;">
-                      <input type="text" name="table_search" class="form-control float-right" placeholder="Buscar">
+                    <form class="form-inline">
+                      <div class="input-group input-group-sm" style="width: 150px;">
+                        <input type="text" name="variable" class="form-control float-right" placeholder="Buscar">
 
-                      <div class="input-group-append">
-                        <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
+                        <div class="input-group-append">
+                          <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
+                        </div>
                       </div>
-                    </div>
+                    </form>
                   </div>
                 </div>
                 <!-- /.card-header -->

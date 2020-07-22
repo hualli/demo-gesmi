@@ -12,9 +12,15 @@ class ObrasocialController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-      $obrassociales = ObraSocial::where('estado','like','habilitado')->orderBy('nombre', 'ASC')->paginate(10);
+      $variable = $request->get('variable');
+
+      $obrassociales = ObraSocial::where('estado','like','habilitado')
+                      ->where('nombre', 'LIKE', "%$variable%")
+                      ->orderBy('nombre', 'ASC')
+                      ->paginate(10);
+
       return view('obrassociales.index', compact('obrassociales'));
     }
 
