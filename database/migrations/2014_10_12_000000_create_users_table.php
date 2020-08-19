@@ -23,6 +23,8 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->enum('estado', ['habilitado', 'deshabilitado'])->default('habilitado');
+            $table->enum('principal', ['visor','pacientes'])->default('pacientes');
+            $table->enum('tipo', ['medico','administrativo'])->default('medico');
             $table->rememberToken();
             $table->timestamps();
         });

@@ -18,7 +18,35 @@
 Route::get('/', function () {
     if( Auth::user() ) //se valida si esta logueado
     {
-        return redirect('pacientes');
+      if( Auth::user()->principal =='pacientes' )//se valida el la pantalla principal
+      {
+          return redirect('/pacientes');
+      }
+
+      if( Auth::user()->principal =='visor' )
+      {
+          return redirect('/visor');
+      }
+
+    }
+    else{
+        return redirect('/login');
+    }
+});
+
+Route::get('/home', function () {
+    if( Auth::user() ) //se valida si esta logueado
+    {
+      if( Auth::user()->principal =='pacientes' )//se valida el la pantalla principal
+      {
+          return redirect('/pacientes');
+      }
+
+      if( Auth::user()->principal =='visor' )
+      {
+          return redirect('/visor');
+      }
+
     }
     else{
         return redirect('/login');
@@ -27,7 +55,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'PacienteController@index')->name('home');
+//Route::get('/home', 'PacienteController@index')->name('home');
 
 Route::middleware(['auth'])->group(function(){
 
@@ -70,5 +98,28 @@ Route::middleware(['auth'])->group(function(){
   Route::get('consultas/{paciente}/editar', 'ConsultaController@editar')->name('consultas.editar');
 
   Route::put('consultas/{consulta}', 'ConsultaController@update')->name('consultas.update');
+
+
+  //Turnos
+
+  Route::get('turnos', 'TurnoController@index')->name('turnos.index');
+
+  Route::get('turnos/{paciente}/nuevo', 'TurnoController@nuevo')->name('turnos.nuevo');
+
+  Route::post('turnos/store', 'TurnoController@store')->name('turnos.store');
+
+  Route::get('turnos/{turno}/consulta', 'TurnoController@consulta')->name('turnos.consulta');
+
+  Route::put('turnos/{turno}', 'TurnoController@cancelar')->name('turnos.cancelar');
+
+
+  //Visor
+
+  Route::get('/visor', 'VisorController@index')->name('visor.index');
+
+
+  //Ayuda
+
+  Route::get('/ayuda', 'AyudaController@index')->name('ayuda');
 
 });

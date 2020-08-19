@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Consulta;
 use App\Paciente;
 use App\TipoConsulta;
+use App\Turno;
 
 class ConsultaController extends Controller
 {
@@ -87,8 +88,11 @@ class ConsultaController extends Controller
       $consulta->tratamiento = $request->tratamiento;
       $consulta->tipo_consulta_id = $request->tipo_consulta_id;
       $consulta->user_id = auth()->id();
-      $consulta->estado = 'atendido';
       $consulta->save();
+
+      $turno = Turno::find($request->turno_id);
+      $turno->estado = 'Atendido';
+      $turno->save();
 
       return redirect()->route('consultas.show', $consulta->paciente_id);
     }

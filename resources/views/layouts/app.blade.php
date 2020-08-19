@@ -131,7 +131,21 @@
           </li>
 
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="{{ route('turnos.index') }}" class="nav-link">
+              <i class="nav-icon fas fa-list-ol"></i>
+              <p>Turnos</p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="{{ route('visor.index') }}" class="nav-link">
+              <i class="nav-icon fas fa-glasses"></i>
+              <p>Visor</p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="{{ route('ayuda') }}" class="nav-link">
               <i class="nav-icon fas fa-file"></i>
               <p>Ayuda</p>
             </a>

@@ -23,4 +23,10 @@ class Paciente extends Model
     {
         return $this->hasMany('App\Consulta');
     }
+
+    //Relacion con Turnos
+    public function turnos()
+    {
+        return $this->hasMany('App\Turno');
+    }
 }
