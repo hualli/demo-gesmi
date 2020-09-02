@@ -27,22 +27,23 @@ class PermissionTableSeeder extends Seeder
       array_push($permissions, Permission::create(['name' => 'consultas_show']));
       array_push($permissions, Permission::create(['name' => 'consultas_create']));
       array_push($permissions, Permission::create(['name' => 'consultas_edit']));
+      array_push($permissions, Permission::create(['name' => 'turnos_index']));
       array_push($permissions, Permission::create(['name' => 'turnos_nuevo']));
       array_push($permissions, Permission::create(['name' => 'turnos_consulta']));
       array_push($permissions, Permission::create(['name' => 'turnos_cancelar']));
       array_push($permissions, Permission::create(['name' => 'visor_index']));
       array_push($permissions, Permission::create(['name' => 'ayuda_index']));
-      array_push($permissions, Permission::create(['name' => 'config_list']));
+      array_push($permissions, Permission::create(['name' => 'ajustes_list']));
 
       $role = Role::create(['name' => 'administrador']);
       $role->syncPermissions($permissions);
 
 
       $user = User::create([
-          'nombre' => 'Administrador',
-          'apellido' => 'Administrador',
-          'username' => 'administrador',
-          'password' => Hash::make('1234'),
+          'nombre' => 'Admin',
+          'apellido' => 'Admin',
+          'username' => 'admin',
+          'password' => Hash::make('laprida785'),
           'email' => 'usuario@admin.com',
 
       ]);

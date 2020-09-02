@@ -71,7 +71,7 @@
           <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <li class="nav-item has-treeview">
               <a href="#" class="nav-link">
-                <img src="{{ asset('adminlte/dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2" alt="User Image">
+                <img src="{{ asset('img/default.jpg') }}" class="img-circle elevation-2" alt="User Image">
                 <p>
                   &nbsp;{{ Auth::user()->apellido }}, {{ Auth::user()->nombre }}
                 </p>
@@ -115,41 +115,82 @@
 
 
 
-
+          @can('pacientes_index')
           <li class="nav-item">
             <a href="{{ route('pacientes.index') }}" class="nav-link">
               <i class="nav-icon fas fa-user-friends"></i>
               <p>Pacientes</p>
             </a>
           </li>
+          @endcan
 
+          @can('obrassociales_index')
           <li class="nav-item">
             <a href="{{ route('obrassociales.index') }}" class="nav-link">
               <i class="nav-icon fas fa-hand-holding-medical"></i>
               <p>Obras Sociales</p>
             </a>
           </li>
+          @endcan
 
+          @can('turnos_index')
           <li class="nav-item">
             <a href="{{ route('turnos.index') }}" class="nav-link">
               <i class="nav-icon fas fa-list-ol"></i>
               <p>Turnos</p>
             </a>
           </li>
+          @endcan
 
+          @can('visor_index')
           <li class="nav-item">
             <a href="{{ route('visor.index') }}" class="nav-link">
               <i class="nav-icon fas fa-glasses"></i>
               <p>Visor</p>
             </a>
           </li>
+          @endcan
 
+          @can('ayuda_index')
           <li class="nav-item">
             <a href="{{ route('ayuda') }}" class="nav-link">
               <i class="nav-icon fas fa-file"></i>
               <p>Ayuda</p>
             </a>
           </li>
+          @endcan
+
+          @can('ajustes_list')
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-cog"></i>
+              <p>
+                Ajustes
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Usuarios</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Permisos</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Roles</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          @endcan
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
