@@ -53,7 +53,12 @@ Route::get('/home', function () {
     }
 });
 
-Auth::routes();
+//Auth::routes();
+
+// Authentication Routes...
+Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
+Route::post('login', 'Auth\LoginController@login');
+Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 
 //Route::get('/home', 'PacienteController@index')->name('home');
 
@@ -121,5 +126,35 @@ Route::middleware(['auth'])->group(function(){
   //Ayuda
 
   Route::get('/ayuda', 'AyudaController@index')->name('ayuda');
+
+
+  // Usuarios
+
+  Route::get('usuarios', 'UsuarioController@index')->name('usuarios.index');
+
+  Route::get('usuarios/create', 'UsuarioController@create')->name('usuarios.create');
+
+  Route::post('usuarios/store', 'UsuarioController@store')->name('usuarios.store');
+
+  Route::get('usuarios/{user}/edit', 'UsuarioController@edit')->name('usuarios.edit');
+
+  Route::put('usuarios/{user}', 'UsuarioController@update')->name('usuarios.update');
+
+  Route::get('usuarios/{usuario}', 'UsuarioController@show')->name('usuarios.show');
+
+
+  // Roles
+  
+  Route::get('roles', 'RoleController@index')->name('roles.index');
+
+  Route::get('roles/create', 'RoleController@create')->name('roles.create');
+
+  Route::post('roles/store', 'RoleController@store')->name('roles.store');
+
+  Route::get('roles/{rol}', 'RoleController@show')->name('roles.show');
+
+  Route::get('roles/{rol}/edit', 'RoleController@edit')->name('roles.edit');
+
+  Route::put('roles/{roles}', 'RoleController@update')->name('roles.update');
 
 });

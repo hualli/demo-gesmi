@@ -45,9 +45,16 @@ class PermissionTableSeeder extends Seeder
           'username' => 'admin',
           'password' => Hash::make('laprida785'),
           'email' => 'usuario@admin.com',
-
       ]);
 
       $user->assignRole('administrador');
+
+      $user2 = User::create([
+        'nombre' => 'Eugenia',
+        'apellido' => 'Perez Marruecos',
+        'username' => 'eperezmarruecos',
+        'password' => Hash::make('laprida785'),
+        'email' => 'eugenia@perezmarruecos.com',
+    ]);
     }
 }
