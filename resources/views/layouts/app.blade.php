@@ -217,7 +217,7 @@
   <!-- /.content-wrapper -->
 
   <footer class="main-footer">
-    <strong>Copyright &copy; 2018-2020 <a href="https://ciatware.com" target="_blank">CIATWare</a>.</strong>
+    <strong>Copyright &copy; 2020 <a href="https://indigosocialmedia.com.ar" target="_blank">IndiGO!</a></strong>
   </footer>
 
   <!-- Control Sidebar -->
