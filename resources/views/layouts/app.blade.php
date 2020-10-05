@@ -133,6 +133,15 @@
           </li>
           @endcan
 
+          @can('agenda_index')
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon far fa-calendar-alt"></i>
+              <p>Agenda</p>
+            </a>
+          </li>
+          @endcan
+
           @can('turnos_index')
           <li class="nav-item">
             <a href="{{ route('turnos.index') }}" class="nav-link">

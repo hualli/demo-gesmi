@@ -27,6 +27,7 @@ class PermissionTableSeeder extends Seeder
       array_push($permissions, Permission::create(['name' => 'consultas_show']));
       array_push($permissions, Permission::create(['name' => 'consultas_create']));
       array_push($permissions, Permission::create(['name' => 'consultas_edit']));
+      array_push($permissions, Permission::create(['name' => 'agenda_index']));
       array_push($permissions, Permission::create(['name' => 'turnos_index']));
       array_push($permissions, Permission::create(['name' => 'turnos_nuevo']));
       array_push($permissions, Permission::create(['name' => 'turnos_consulta']));
