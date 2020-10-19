@@ -45,7 +45,7 @@
                         <th style="width: 6%;">&nbsp;</th>
                         <th style="width: 6%;">&nbsp;</th>
                         <th style="width: 6%;">
-                          <a href="{{ route('pacientes.create') }}" class="btn btn-primary btn-block"><i class="fas fa-plus"></i></a>
+                          <a href="{{ route('pacientes.create') }}" class="btn btn-primary btn-block" title="Agregar Paciente"><i class="fas fa-plus"></i></a>
                         </th>
                       </tr>
                     </thead>
@@ -56,13 +56,13 @@
                           <td>{{ $paciente->apellido }}, {{ $paciente->nombre }}</td>
                           <td>{{ $paciente->telefono_celular }}</td>
                           <td style="width: 6%;">
-                            <a href="{{ route('turnos.nuevo', $paciente->id) }}" class="btn btn-info btn-block"><i class="fas fa-sort-amount-up-alt"></i></a>
+                            <a href="{{ route('turnos.nuevo', $paciente->id) }}" class="btn btn-info btn-block" title="Turnos"><i class="fas fa-sort-amount-up-alt"></i></a>
                           </td>
                           <td style="width: 6%;">
-                            <a href="{{ route('consultas.show', $paciente->id) }}" class="btn btn-dark btn-block"><i class="fas fa-notes-medical"></i></a>
+                            <a href="{{ route('consultas.show', $paciente->id) }}" class="btn btn-dark btn-block" title="Historia Clínica"><i class="fas fa-notes-medical"></i></a>
                           </td>
                           <td style="width: 6%;">
-                            <a href="{{ route('pacientes.show', $paciente->id) }}" class="btn btn-success btn-block"><i class="far fa-eye"></i></a>
+                            <a href="{{ route('pacientes.show', $paciente->id) }}" class="btn btn-success btn-block" title="Detalle del Paciente"><i class="far fa-eye"></i></a>
                           </td>
                         </tr>
                       @endforeach
