@@ -23,6 +23,11 @@
             </div>
             <!-- /.card-header -->
             <div class="card-body">
+              <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-1 offset-md-11 col-lg-1 offset-lg-11 col-xl-1 offset-xl-11">
+                  <a href="{{route('obrassociales.index')}}" class="btn btn-primary btn-block">Volver</a>
+                </div>
+              </div>
               <form method="post" action="{{ route('obrassociales.update', $obrasocial->id)}}" role="form">
                 {{ csrf_field() }}
                 {{ method_field('PUT') }}
@@ -38,7 +43,7 @@
                 <div class="row">
                   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                     <div class="form-group">
-                      <button type="submit" class="btn btn-primary">Agregar</button>
+                      <button type="submit" class="btn btn-primary">Actualizar</button>
                     </div>
                   </div>
                 </div>

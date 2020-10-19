@@ -23,6 +23,11 @@
             </div>
             <!-- /.card-header -->
             <div class="card-body">
+              <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-1 offset-md-11 col-lg-1 offset-lg-11 col-xl-1 offset-xl-11">
+                  <a href="{{route('obrassociales.index')}}" class="btn btn-primary btn-block">Volver</a>
+                </div>
+              </div>
               <form method="post" action="{{ route('obrassociales.store')}}" role="form">
                 {{ csrf_field() }}
                 <div class="row">

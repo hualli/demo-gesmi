@@ -24,9 +24,14 @@
 
             <!-- /.card-header -->
             <div class="card-body">
+              <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-1 offset-md-11 col-lg-1 offset-lg-11 col-xl-1 offset-xl-11">
+                  <a href="{{route('obrassociales.index')}}" class="btn btn-primary btn-block">Volver</a>
+                </div>
+              </div>
 
               <div class="row">
-                <div class="col-md-12">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                   <br>
                   <p><b>Nombre: </b>{{$obrasocial->nombre}}</p>
                   <br>
