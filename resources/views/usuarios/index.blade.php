@@ -43,7 +43,7 @@
                         <th>Tel&eacute;fonos</th>
                         <th>&nbsp;</th>
                         <th style="width: 5%">
-                          <a href="{{ route('usuarios.create') }}" class="btn btn-primary btn-block"><i class="fas fa-plus"></i></a>
+                          <a href="{{ route('usuarios.create') }}" class="btn btn-primary btn-block" title="Agregar Usuario"><i class="fas fa-plus"></i></a>
                         </th>
                       </tr>
                     </thead>
@@ -53,10 +53,10 @@
                           <td>{{ $usuario->apellido }}, {{ $usuario->nombre }}</td>
                           <td>{{ $usuario->telefono_celular }} // {{ $usuario->telefono_fijo }}</td>
                           <td style="width: 5%">
-                            <a href="{{ route('usuarios.show', $usuario->id) }}" class="btn btn-success btn-block"><i class="far fa-eye"></i></a>
+                            <a href="{{ route('usuarios.show', $usuario->id) }}" class="btn btn-success btn-block" title="Detalle del Usuario"><i class="far fa-eye"></i></a>
                           </td>
                           <td style="width: 5%">
-                            <a href="{{ route('usuarios.edit', $usuario->id) }}" class="btn btn-warning btn-block"><i class="fas fa-pencil-alt" style="color:white"></i></a>
+                            <a href="{{ route('usuarios.edit', $usuario->id) }}" class="btn btn-warning btn-block" title="Editar Usuario"><i class="fas fa-pencil-alt" style="color:white"></i></a>
                           </td>
                         </tr>
                       @endforeach
