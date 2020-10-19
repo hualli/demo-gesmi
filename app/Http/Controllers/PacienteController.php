@@ -13,10 +13,14 @@ class PacienteController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+      $variable = $request->get('variable');
 
-      $pacientes = Paciente::orderBy('apellido', 'ASC')
+      $pacientes = Paciente::where('estado','like','habilitado')
+                  ->where('nombre', 'LIKE', "%$variable%")
+                  ->orWhere('apellido', 'LIKE', "%$variable%")
+                  ->orderBy('apellido', 'ASC')
                   ->paginate(10);
 
       return view('pacientes.index', compact('pacientes'));
