@@ -43,7 +43,7 @@
                         <th>Nombre</th>
                         <th style="width: 6%;">&nbsp;</th>
                         <th style="width: 6%;">
-                          <a href="{{ route('obrassociales.create') }}" class="btn btn-primary btn-block"><i class="fas fa-plus"></i></a>
+                          <a href="{{ route('obrassociales.create') }}" class="btn btn-primary btn-block" title="Agregar Obra Social"><i class="fas fa-plus"></i></a>
                         </th>
                       </tr>
                     </thead>
@@ -53,10 +53,10 @@
                           <td>{{$loop->iteration}}</td>
                           <td>{{ $obrasocial->nombre }}</td>
                           <td style="width: 6%;">
-                            <a href="{{ route('obrassociales.show', $obrasocial->id) }}" class="btn btn-success btn-block"><i class="far fa-eye"></i></a>
+                            <a href="{{ route('obrassociales.show', $obrasocial->id) }}" class="btn btn-success btn-block" title="Detalle de Obra Social"><i class="far fa-eye"></i></a>
                           </td>
                           <td style="width: 6%;">
-                            <a href="{{ route('obrassociales.edit', $obrasocial->id) }}" class="btn btn-warning btn-block"><i class="fas fa-pencil-alt" style="color:white"></i></a>
+                            <a href="{{ route('obrassociales.edit', $obrasocial->id) }}" class="btn btn-warning btn-block" title="Editar Obra Social"><i class="fas fa-pencil-alt" style="color:white"></i></a>
                           </td>
                         </tr>
                       @endforeach
