@@ -42,6 +42,12 @@
                   <p><b>Obra Social: </b>{{$paciente->obrasocial->nombre}} - {{$paciente->plan}} - {{$paciente->numero_afiliado}}</p>
                   <br>
 
+                  <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2 col-xl-2">
+                    <a href="{{route('pacientes.edit', $paciente->id)}}" class="btn btn-warning btn-block">Editar</a>
+                    </div>
+                  </div>
+
                 </div>
               </div>
             </div>
