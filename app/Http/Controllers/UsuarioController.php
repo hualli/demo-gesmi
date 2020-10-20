@@ -34,7 +34,8 @@ class UsuarioController extends Controller
      */
     public function create()
     {
-        //
+        $roles = Role::get();
+        return view('usuarios.create',compact('roles'));
     }
 
     /**
@@ -45,7 +46,36 @@ class UsuarioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = new User();
+        $user->nombre = $request->nombre;
+        $user->apellido = $request->apellido;
+        $user->username = $request->username;
+        $user->password =bcrypt($request->password);
+        $user->email = $request->email;
+
+        if ($request->principal == 1) {
+            $user->principal = 'pacientes';
+        }
+
+        if ($request->principal == 2) {
+            $user->principal = 'visor';
+        }
+
+        if ($request->tipo == 1) {
+            $user->tipo = 'medico';
+        }
+        
+        if ($request->tipo == 2) {
+            $user->tipo = 'administrativo';
+        }
+        
+        $user->save();
+
+        if (isset($request->rol) && $request->rol != 0) {
+            $user->assignRole($request->rol);
+        }
+        
+        return redirect()->route('usuarios.index');
     }
 
     /**
