@@ -166,4 +166,6 @@ Route::middleware(['auth'])->group(function(){
 
   Route::get('agenda/{medico}', 'AgendaController@show')->name('agenda.show');
 
+  Route::post('agenda/cancelar', 'AgendaController@cancelar')->name('agenda.cancelar');
+
 });

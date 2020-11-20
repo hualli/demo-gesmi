@@ -59,7 +59,7 @@
               <!-- /.card -->
             </div>
 
-            <!-- Modal -->
+            <!-- Modal de Turnos-->
             <div class="modal fade" id="turnoModal" tabindex="-1" role="dialog" aria-labelledby="turnoModalLabel" aria-hidden="true">
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -93,11 +93,33 @@
                   </div>
                   <div class="modal-footer">
                     <button id="btnGuardar" type="button" class="btn btn-primary">Guardar</button>
-                    <button id="btnEliminar" type="button" class="btn btn-danger">Eliminar</button>
                   </div>
                 </div>
               </div>
             </div>
+
+            <!-- Modal de Elimino Turnos-->
+            <div class="modal fade" id="turnoEliminar" tabindex="-1" role="dialog" aria-labelledby="turnoEliminarLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Cancelar Turno</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <label id="lbTurno"></label>
+                    
+                    <input type="hidden" class="form-control" id="txtTurno" name="txtTurno">
+                  </div>
+                  <div class="modal-footer">
+                    <button id="btnCancelar" type="button" class="btn btn-danger">Cancelar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
 
         </div>
@@ -134,16 +156,17 @@
 
             $('#txtFecha').val(dia+"-"+mes+"-"+anio+" "+hora);
 
-            /* $('#txtFecha').val(info.dateStr); */
-
             $('#btnGuardar').prop('disabled',false);
-            $('#btnEliminar').prop('disabled',true);
 
             $('#turnoModal').modal();
           },
 
           eventClick:function(info){
-
+            $('#txtTurno').val(info.event.id);
+            $('#lbTurno').empty();
+            $('#lbTurno').append(info.event.title);
+            $('#btnCancelar').prop('disabled',false);
+            $('#turnoEliminar').modal();
           },
 
           events:"{{route('agenda.show',$medico_id)}}",
@@ -155,6 +178,11 @@
         $('#btnGuardar').click(function(){
           objTurno=recolectarDatos("POST");
           guardarTurno(objTurno);
+        });
+
+        $('#btnCancelar').click(function(){
+          objTurno=recolectarDatosCancelar("POST");
+          cancelarTurno(objTurno);
         });
 
         function recolectarDatos(method){
@@ -178,6 +206,32 @@
               success:function(msg){
                 console.log(msg);
                 $('#turnoModal').modal('toggle');
+                calendar.refetchEvents();
+                },
+              error:function(){alert("Hay un error");},
+            }
+          );
+        };
+
+
+        function recolectarDatosCancelar(method){
+          turnoid={
+            id:$('#txtTurno').val(),
+            '_token':$("meta[name='csrf-token']").attr("content"),
+            '_method':method,
+          }
+          return turnoid;
+        };
+
+        function cancelarTurno(objTurno){
+          $.ajax(
+            {
+              type:"POST",
+              url:"{{route('agenda.cancelar')}}",
+              data:objTurno,
+              success:function(msg){
+                console.log(msg);
+                $('#turnoEliminar').modal('toggle');
                 calendar.refetchEvents();
                 },
               error:function(){alert("Hay un error");},
