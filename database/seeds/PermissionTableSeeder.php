@@ -55,7 +55,7 @@ class PermissionTableSeeder extends Seeder
         'apellido' => 'Perez Marruecos',
         'username' => 'eperezmarruecos',
         'password' => Hash::make('laprida785'),
-        'email' => 'eugenia@perezmarruecos.com', */
-    ]);
+        'email' => 'eugenia@perezmarruecos.com',
+        ]); */
     }
 }
