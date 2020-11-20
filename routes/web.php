@@ -157,4 +157,13 @@ Route::middleware(['auth'])->group(function(){
 
   Route::put('roles/{roles}', 'RoleController@update')->name('roles.update');
 
+
+  // Agenda
+  
+  Route::get('agenda', 'AgendaController@index')->name('agenda.index');
+
+  Route::post('agenda/store', 'AgendaController@store')->name('agenda.store');
+
+  Route::get('agenda/{medico}', 'AgendaController@show')->name('agenda.show');
+
 });

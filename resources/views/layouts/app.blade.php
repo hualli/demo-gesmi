@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -32,6 +32,10 @@
   <link rel="stylesheet" href="{{ asset('adminlte/dist/css/adminlte.min.css') }}">
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+
+  <!-- FullCalendar -->
+  <link href="{{ asset('fullcalendar/main.css') }}" rel="stylesheet"/>
+  <script src="{{ asset('fullcalendar/main.js') }}"></script>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <!-- Site wrapper -->
@@ -135,7 +139,7 @@
 
           @can('agenda_index')
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="{{ route('agenda.index') }}" class="nav-link">
               <i class="nav-icon far fa-calendar-alt"></i>
               <p>Agenda</p>
             </a>
@@ -335,6 +339,8 @@
 
   })
 </script>
+
+
 
 
 </body>
