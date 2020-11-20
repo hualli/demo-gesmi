@@ -50,12 +50,12 @@ class PermissionTableSeeder extends Seeder
 
       $user->assignRole('administrador');
 
-      $user2 = User::create([
+      /* $user2 = User::create([
         'nombre' => 'Eugenia',
         'apellido' => 'Perez Marruecos',
         'username' => 'eperezmarruecos',
         'password' => Hash::make('laprida785'),
-        'email' => 'eugenia@perezmarruecos.com',
+        'email' => 'eugenia@perezmarruecos.com', */
     ]);
     }
 }
