@@ -136,7 +136,7 @@
           allDaySlot: false,
           weekends: false,
           slotDuration: '00:15:00',
-          slotMinTime: '13:00:00',
+          slotMinTime: '11:00:00',
           slotMaxTime: '20:30:00',
           titleFormat:{year: 'numeric', month: 'long', day: 'numeric'},
           buttonText:{today:'Hoy'},
