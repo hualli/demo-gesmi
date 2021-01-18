@@ -18,8 +18,8 @@ class CreatePacientesTable extends Migration
             $table->bigIncrements('id');
             $table->string('nombre');
             $table->string('apellido');
-            $table->string('dni_cuil_cuit')->nullable();
-            $table->dateTime('fecha_nacimiento')->nullable();
+            $table->string('dni_cuil_cuit');
+            $table->dateTime('fecha_nacimiento');
             $table->string('domicilio')->nullable();
             $table->string('telefono_fijo')->nullable();
             $table->string('telefono_celular')->nullable();

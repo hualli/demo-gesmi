@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 use App\Paciente;
 use App\ObraSocial;
+use App\Http\Requests\PacienteRequest;
 
 class PacienteController extends Controller
 {
@@ -15,6 +17,7 @@ class PacienteController extends Controller
      */
     public function index(Request $request)
     {
+      
       $variable = $request->get('variable');
 
       $pacientes = Paciente::where('estado','like','habilitado')
@@ -46,7 +49,7 @@ class PacienteController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PacienteRequest $request)
     {
       $paciente = new Paciente;
       $paciente->apellido = $request->apellido;
