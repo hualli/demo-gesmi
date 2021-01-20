@@ -39,9 +39,9 @@
                   <table class="table table-hover text-nowrap">
                     <thead>
                       <tr>
-                        <th>&nbsp;</th>
+                        <th>#</th>
                         <th>Nombre</th>
-                        <th style="width: 6%;">&nbsp;</th>
+                        <th>Estado</th>
                         <th style="width: 6%;">
                           <a href="{{ route('obrassociales.create') }}" class="btn btn-primary btn-block" title="Agregar Obra Social"><i class="fas fa-plus"></i></a>
                         </th>
@@ -52,9 +52,7 @@
                         <tr>
                           <td>{{$loop->iteration}}</td>
                           <td>{{ $obrasocial->nombre }}</td>
-                          <td style="width: 6%;">
-                            <a href="{{ route('obrassociales.show', $obrasocial->id) }}" class="btn btn-success btn-block" title="Detalle de Obra Social"><i class="far fa-eye"></i></a>
-                          </td>
+                          <td>{{ $obrasocial->estado }}</td>
                           <td style="width: 6%;">
                             <a href="{{ route('obrassociales.edit', $obrasocial->id) }}" class="btn btn-warning btn-block" title="Editar Obra Social"><i class="fas fa-pencil-alt" style="color:white"></i></a>
                           </td>

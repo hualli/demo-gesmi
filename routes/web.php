@@ -75,7 +75,7 @@ Route::middleware(['auth'])->group(function(){
 
   Route::get('pacientes/{paciente}/edit', 'PacienteController@edit')->name('pacientes.edit');
 
-  Route::put('pacientes/{paciente}', 'PacienteController@update')->name('pacientes.update');
+  Route::put('pacientes/update', 'PacienteController@update')->name('pacientes.update');
 
 
   //Obras Sociales
@@ -89,7 +89,7 @@ Route::middleware(['auth'])->group(function(){
 
   Route::get('obrassociales/{obrasocial}/edit', 'ObrasocialController@edit')->name('obrassociales.edit');
 
-  Route::put('obrassociales/{obrasocial}', 'ObrasocialController@update')->name('obrassociales.update');
+  Route::put('obrassociales/update', 'ObrasocialController@update')->name('obrassociales.update');
 
 
   //Consultas
@@ -116,6 +116,8 @@ Route::middleware(['auth'])->group(function(){
   Route::get('turnos/{turno}/consulta', 'TurnoController@consulta')->name('turnos.consulta');
 
   Route::put('turnos/{turno}', 'TurnoController@cancelar')->name('turnos.cancelar');
+
+  Route::put('turnos/atender/{turno}', 'TurnoController@finalizar')->name('turnos.finalizar');
 
 
   //Visor
@@ -167,5 +169,8 @@ Route::middleware(['auth'])->group(function(){
   Route::get('agenda/{medico}', 'AgendaController@show')->name('agenda.show');
 
   Route::post('agenda/cancelar', 'AgendaController@cancelar')->name('agenda.cancelar');
+
+  Route::post('agenda/finalizar', 'AgendaController@finalizar')->name('agenda.finalizar');
+
 
 });

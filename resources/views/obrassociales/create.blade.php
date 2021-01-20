@@ -34,7 +34,12 @@
                   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                     <div class="form-group">
                       <label>Nombre</label>
-                      <input type="text" class="form-control" placeholder="Enter ..." id="nombre" name="nombre">
+                      <input type="text" class="form-control" placeholder="Enter ..." id="nombre" name="nombre" value="{{ old('nombre') }}">
+                        @if ($errors->has('nombre'))
+                          <div class="alert alert-danger">
+                            {{ $errors->first('nombre') }}
+                          </div>
+                        @endif
                     </div>
                   </div>
                 </div>

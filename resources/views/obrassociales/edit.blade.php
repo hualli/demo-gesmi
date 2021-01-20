@@ -23,12 +23,8 @@
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-              <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-2 offset-md-10 col-lg-2 offset-lg-10 col-xl-2 offset-xl-10">
-                  <a href="{{route('obrassociales.index')}}" class="btn btn-primary btn-block">Volver</a>
-                </div>
-              </div>
-              <form method="post" action="{{ route('obrassociales.update', $obrasocial->id)}}" role="form">
+            
+              <form method="post" action="{{ route('obrassociales.update')}}" role="form">
                 {{ csrf_field() }}
                 {{ method_field('PUT') }}
                 <div class="row">
@@ -36,6 +32,12 @@
                     <div class="form-group">
                       <label>Nombre</label>
                       <input type="text" class="form-control" placeholder="Enter ..." id="nombre" name="nombre" value="{{ $obrasocial->nombre }}">
+                      <input type="hidden" class="form-control" placeholder="Enter ..." id="id" name="id" value="{{ $obrasocial->id }}">
+                        @if ($errors->has('nombre'))
+                          <div class="alert alert-danger">
+                            {{ $errors->first('nombre') }}
+                          </div>
+                        @endif
                     </div>
                   </div>
                 </div>
@@ -43,9 +45,12 @@
                 <div class="row">
                   <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2 col-xl-2">
                     <div class="form-group">
-                      <button type="submit" class="btn btn-primary btn-block">Actualizar</button>
+                      <button type="submit" class="btn btn-success btn-block">Actualizar</button>
                     </div>
                   </div>
+                    <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2 col-xl-2">
+                      <a href="{{route('obrassociales.index')}}" class="btn btn-primary btn-block">Volver</a>
+                    </div>
                 </div>
 
 
