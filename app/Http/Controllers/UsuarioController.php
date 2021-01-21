@@ -97,11 +97,20 @@ class UsuarioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit()
     {
-        $usuario = User::find($id);
+        $usuario = User::find(auth()->id());
+
         $roles = Role::get();
+        
         return view('usuarios.edit', compact('usuario','roles'));
+    }
+
+    public function editPerfil()
+    {
+        $usuario = User::find(auth()->id());
+
+        return view('usuarios.editPerfil', compact('usuario'));
     }
 
     /**

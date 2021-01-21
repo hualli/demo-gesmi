@@ -138,7 +138,9 @@ Route::middleware(['auth'])->group(function(){
 
   Route::post('usuarios/store', 'UsuarioController@store')->name('usuarios.store');
 
-  Route::get('usuarios/{user}/edit', 'UsuarioController@edit')->name('usuarios.edit');
+  Route::get('usuarios/edit', 'UsuarioController@edit')->name('usuarios.edit');
+
+  Route::get('usuarios/perfil', 'UsuarioController@editPerfil')->name('usuarios.editPerfil');
 
   Route::put('usuarios/{user}', 'UsuarioController@update')->name('usuarios.update');
 

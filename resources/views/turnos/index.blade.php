@@ -56,13 +56,15 @@
                           <td>{{ $turno->paciente->obrasocial->nombre }}</td>
                           <td>{{ $turno->estado }}</td>
                           <td>{{ $turno->user->apellido }}, {{ $turno->user->nombre }}</td>
-                          <td style="width: 6%;">
-                            <form method="post" action="{{ route('turnos.cancelar', $turno->id) }}" role="form">
-                              {{ csrf_field() }}
-                              {{ method_field('PUT') }}
-                            <button type="submit" class="btn btn-danger btn-block"><i class="fas fa-times"></i></button>
-                            </form>
-                          </td>
+                          @if($turno->estado == 'Pendiente')  
+                            <td style="width: 6%;">
+                              <form method="post" action="{{ route('turnos.cancelar', $turno->id) }}" role="form">
+                                {{ csrf_field() }}
+                                {{ method_field('PUT') }}
+                              <button type="submit" class="btn btn-danger btn-block"><i class="fas fa-times"></i></button>
+                              </form>
+                            </td>
+                          @endif
                         </tr>
                       @endforeach
                     </tbody>

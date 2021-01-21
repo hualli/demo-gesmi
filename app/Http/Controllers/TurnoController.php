@@ -67,6 +67,8 @@ class TurnoController extends Controller
   public function consulta($id)
   {
       $turno = Turno::find($id);
+      $turno->estado = 'Atendido';
+      $turno->save();
 
       $consulta = new Consulta;
       $consulta->fecha = date("Y-m-d H:i:s");
@@ -80,6 +82,7 @@ class TurnoController extends Controller
       $tipoconsultas = TipoConsulta::orderBy('nombre', 'ASC')
                       ->select('nombre as nombre', 'id as id')
                       ->get();
+                      
       $paciente = Paciente::find($consulta->paciente_id);
 
       return view('consultas.editar', compact('consulta', 'tipoconsultas', 'paciente', 'turno'));

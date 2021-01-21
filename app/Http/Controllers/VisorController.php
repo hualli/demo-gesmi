@@ -11,12 +11,16 @@ class VisorController extends Controller
     $this->middleware('auth');
   }
 
-  public function index()
+  public function index(Request $request)
   {
-    $fecha_actual = date("Y-m-d");
+    $fecha = date("Y-m-d");
+
+    if($request->searchText != ''){
+      $fecha = $request->searchText;
+    }
     
     $turnos = Turno::where('user_id','like', auth()->id())
-              ->whereDate('fecha', '=', $fecha_actual)
+              ->whereDate('fecha', $fecha)
               ->orderBy('fecha', 'DESC')
               ->paginate(10);
 
