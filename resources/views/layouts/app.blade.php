@@ -76,7 +76,7 @@
           <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <li class="nav-item has-treeview">
               <a href="#" class="nav-link">
-                <img src="{{ asset('img/default.jpg') }}" class="img-circle elevation-2" alt="User Image">
+                <img src="{{asset('img/perfil/'.Auth::user()->imagen_perfil)}}" class="img-circle elevation-2" style=" width:40px; height:40px;">
                 <p>
                   &nbsp;{{ Auth::user()->apellido }}, {{ Auth::user()->nombre }}
                 </p>

@@ -144,6 +144,8 @@ Route::middleware(['auth'])->group(function(){
 
   Route::put('usuarios/{user}', 'UsuarioController@update')->name('usuarios.update');
 
+  Route::put('usuario/updatePerfil', 'UsuarioController@updatePerfil')->name('usuarios.updatePerfil');
+
   Route::get('usuarios/{usuario}', 'UsuarioController@show')->name('usuarios.show');
 
 

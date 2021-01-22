@@ -24,7 +24,7 @@
             <!-- /.card-header -->
             <div class="card-body">
 
-              <form method="post" action="{{ route('usuarios.update', $usuario->id)}}" role="form">
+              <form method="post" action="{{ route('usuarios.updatePerfil')}}" role="form" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 {{ method_field('PUT') }}
 
@@ -44,22 +44,35 @@
                 </div>
 
                 <div class="row">
-                  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                    <div class="form-group">
-                      <label>Imagen</label>
-                      <input type="file" class="form-control" placeholder="Enter ..." id="username" name="username" value="{{ $usuario->username }}">
-                    </div>
-                  </div>
+
                   <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
                     <div class="form-group">
                       <label>E-mail</label>
                       <input type="text" class="form-control" placeholder="Enter ..." id="email" name="email" value="{{ $usuario->email }}">
                     </div>
                   </div>
+             
                 </div>
 
-                <hr>
+                <div class="row">
+                  
+                  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                    <div class="form-group">
+                      <label>Imagen</label>
+                      <input type="file" class="form-control" placeholder="Enter ..." id="img" name="img" value="{{ $usuario->imagen_perfil }}">
+                    </div>
+                  </div>
 
+                  <div class="form-group">
+                      @if(($usuario->imagen_perfil != ""))               
+                      <img src="{{asset('img/perfil/'.$usuario->imagen_perfil)}}" style=" width: 150px; height: 150px;">
+                        @else
+                        <img src="{{asset('img/perfil/imagenNoDisponible.jpg')}}" style=" width: 150px; height: 150px;">
+                      @endif
+
+                  </div>
+                
+                </div>
                 
 
                 <div class="row">
