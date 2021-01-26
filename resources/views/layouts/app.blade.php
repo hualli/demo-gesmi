@@ -146,6 +146,15 @@
           </li>
           @endcan
 
+          @can('agenda_index')
+          <li class="nav-item">
+            <a href="{{ route('agendagl.index') }}" class="nav-link">
+              <i class="nav-icon far fa-calendar-alt"></i>
+              <p>Gabinete - L&aacute;ser Spectra</p>
+            </a>
+          </li>
+          @endcan
+
           @can('turnos_index')
           <li class="nav-item">
             <a href="{{ route('turnos.index') }}" class="nav-link">
