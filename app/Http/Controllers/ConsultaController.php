@@ -73,36 +73,20 @@ class ConsultaController extends Controller
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
       $consulta = Consulta::find($id);
+      $consulta->motivo_consulta = $request->motivo_consulta;
       $consulta->estudios = $request->estudios;
       $consulta->diagnostico = $request->diagnostico;
       $consulta->tratamiento = $request->tratamiento;
       $consulta->tipo_consulta_id = $request->tipo_consulta_id;
       $consulta->user_id = auth()->id();
       $consulta->save();
-
-      $turno = Turno::find($request->turno_id);
-      $turno->estado = 'Atendido';
-      $turno->save();
-
+      
       return redirect()->route('consultas.show', $consulta->paciente_id);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         //
@@ -121,9 +105,11 @@ class ConsultaController extends Controller
     public function editar($id)
     {
         $consulta = Consulta::find($id);
+
         $tipoconsultas = TipoConsulta::orderBy('nombre', 'ASC')
                         ->select('nombre as nombre', 'id as id')
                         ->get();
+
         $paciente = Paciente::find($consulta->paciente_id);
 
         return view('consultas.editar', compact('consulta', 'tipoconsultas', 'paciente'));

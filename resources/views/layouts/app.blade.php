@@ -32,7 +32,8 @@
   <link rel="stylesheet" href="{{ asset('adminlte/dist/css/adminlte.min.css') }}">
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-
+  
+  <link rel="stylesheet" href="{{ asset('adminlte/plugins/sweetalert2/sweetalert2.min.css') }}">
   <!-- FullCalendar -->
   <link href="{{ asset('fullcalendar/main.css') }}" rel="stylesheet"/>
   <script src="{{ asset('fullcalendar/main.js') }}"></script>
@@ -75,7 +76,7 @@
           <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <li class="nav-item has-treeview">
               <a href="#" class="nav-link">
-                <img src="{{ asset('img/default.jpg') }}" class="img-circle elevation-2" alt="User Image">
+                <img src="{{asset('img/perfil/'.Auth::user()->imagen_perfil)}}" class="img-circle elevation-2" style=" width:40px; height:40px;">
                 <p>
                   &nbsp;{{ Auth::user()->apellido }}, {{ Auth::user()->nombre }}
                 </p>
@@ -84,7 +85,7 @@
               <!-- submenu de usuario -->
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="#" class="nav-link">
+                  <a href="{{ route('usuarios.editPerfil') }}" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Editar Perfil</p>
                   </a>
@@ -273,7 +274,7 @@
 <!-- Bootstrap Switch -->
 <script src="{{ asset('adminlte/plugins/bootstrap-switch/js/bootstrap-switch.min.js') }}"></script>
 
-
+<script src="{{ asset('adminlte/plugins/sweetalert2/sweetalert2.all.min.js')}}"></script>
 
 <script>
   $(function () {

@@ -30,4 +30,13 @@ class Turno extends Model
   {
       return $this->belongsTo('App\TipoConsulta');
   }
+
+  public function formatoFecha($value) {
+    return \Carbon\Carbon::parse($value)->format('d/m/Y');
+  }
+
+  public function formatohora($value) {
+    return \Carbon\Carbon::parse($value)->format('H:i:s');
+  }
+
 }

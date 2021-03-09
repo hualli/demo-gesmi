@@ -101,14 +101,6 @@
                 <div class="row">
                   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                     <div class="form-group">
-                      <input type="hidden" class="form-control" id="turno_id" name="turno_id" value="{{$turno->id}}">
-                    </div>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                    <div class="form-group">
                       <button type="submit" class="btn btn-primary">Agregar</button>
                     </div>
                   </div>

@@ -9,6 +9,7 @@ use App\TipoConsulta;
 use App\Turno;
 use Illuminate\Support\Facades\DB;
 
+
 class AgendaController extends Controller
 {
     public function index(Request $request)
@@ -51,7 +52,7 @@ class AgendaController extends Controller
                     ->join('pacientes', 'pacientes.id', '=', 'turnos.paciente_id')
                     ->join('tipo_consulta', 'tipo_consulta.id', '=', 'turnos.tipo_consulta_id')
                     ->where('turnos.user_id','LIKE',$id)
-                    ->where('turnos.estado','!=','Cancelado')
+                    ->where('turnos.estado','=','Pendiente')
                     ->select(DB::raw("CONCAT(pacientes.apellido,' ',pacientes.nombre,' - ',tipo_consulta.nombre) as title"),'turnos.fecha as start','turnos.id as id')
                     ->get();
         
@@ -64,6 +65,14 @@ class AgendaController extends Controller
     {
         $turno = Turno::find($request->id);
         $turno->estado = 'Cancelado';
+        $turno->save();;
+        
+    }
+
+    public function finalizar(Request $request)
+    {
+        $turno = Turno::find($request->id);
+        $turno->estado = 'Atendido';
         $turno->save();;
         
     }
