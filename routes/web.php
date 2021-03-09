@@ -174,20 +174,7 @@ Route::middleware(['auth'])->group(function(){
 
   Route::post('agenda/cancelar', 'AgendaController@cancelar')->name('agenda.cancelar');
 
-<<<<<<< HEAD
-
-  // Agendagl
-  
-  Route::get('agendagl', 'AgendaglController@index')->name('agendagl.index');
-
-  Route::post('agendagl/store', 'AgendaglController@store')->name('agendagl.store');
-
-  Route::get('agendagl/{medico}', 'AgendaglController@show')->name('agendagl.show');
-
-  Route::post('agendagl/cancelar', 'AgendaglController@cancelar')->name('agendagl.cancelar');
-=======
   Route::post('agenda/finalizar', 'AgendaController@finalizar')->name('agenda.finalizar');
 
->>>>>>> angelClinica
 
 });
