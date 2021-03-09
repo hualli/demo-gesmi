@@ -17,7 +17,7 @@ class PacienteRequest extends FormRequest
         return [
             'apellido' => 'required',
             'nombre' => 'required',
-            'dni_cuil_cuit' => 'required|unique:Pacientes,dni_cuil_cuit,'. request('id'),
+            'dni_cuil_cuit' => 'required|unique:pacientes,dni_cuil_cuit,'. request('id'),
             'obrasocial_id' => 'required',
             'fecha_nacimiento'=>'required'
         ];
