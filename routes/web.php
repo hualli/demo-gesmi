@@ -75,7 +75,7 @@ Route::middleware(['auth'])->group(function(){
 
   Route::get('pacientes/{paciente}/edit', 'PacienteController@edit')->name('pacientes.edit');
 
-  Route::put('pacientes/{paciente}', 'PacienteController@update')->name('pacientes.update');
+  Route::put('pacientes/update', 'PacienteController@update')->name('pacientes.update');
 
 
   //Obras Sociales
@@ -89,7 +89,7 @@ Route::middleware(['auth'])->group(function(){
 
   Route::get('obrassociales/{obrasocial}/edit', 'ObrasocialController@edit')->name('obrassociales.edit');
 
-  Route::put('obrassociales/{obrasocial}', 'ObrasocialController@update')->name('obrassociales.update');
+  Route::put('obrassociales/update', 'ObrasocialController@update')->name('obrassociales.update');
 
 
   //Consultas
@@ -117,6 +117,8 @@ Route::middleware(['auth'])->group(function(){
 
   Route::put('turnos/{turno}', 'TurnoController@cancelar')->name('turnos.cancelar');
 
+  Route::put('turnos/atender/{turno}', 'TurnoController@finalizar')->name('turnos.finalizar');
+
 
   //Visor
 
@@ -136,9 +138,13 @@ Route::middleware(['auth'])->group(function(){
 
   Route::post('usuarios/store', 'UsuarioController@store')->name('usuarios.store');
 
-  Route::get('usuarios/{user}/edit', 'UsuarioController@edit')->name('usuarios.edit');
+  Route::get('usuarios/edit', 'UsuarioController@edit')->name('usuarios.edit');
+
+  Route::get('usuarios/perfil', 'UsuarioController@editPerfil')->name('usuarios.editPerfil');
 
   Route::put('usuarios/{user}', 'UsuarioController@update')->name('usuarios.update');
+
+  Route::put('usuario/updatePerfil', 'UsuarioController@updatePerfil')->name('usuarios.updatePerfil');
 
   Route::get('usuarios/{usuario}', 'UsuarioController@show')->name('usuarios.show');
 
@@ -167,5 +173,8 @@ Route::middleware(['auth'])->group(function(){
   Route::get('agenda/{medico}', 'AgendaController@show')->name('agenda.show');
 
   Route::post('agenda/cancelar', 'AgendaController@cancelar')->name('agenda.cancelar');
+
+  Route::post('agenda/finalizar', 'AgendaController@finalizar')->name('agenda.finalizar');
+
 
 });

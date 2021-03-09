@@ -91,26 +91,52 @@ class UsuarioController extends Controller
         return view('usuarios.show', compact('usuario'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    public function edit()
     {
-        $usuario = User::find($id);
+        $usuario = User::find(auth()->id());
+
         $roles = Role::get();
+        
         return view('usuarios.edit', compact('usuario','roles'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    public function editPerfil()
+    {
+        $usuario = User::find(auth()->id());
+
+        return view('usuarios.editPerfil', compact('usuario'));
+    }
+
+    public function updatePerfil(Request $request)
+    {
+        $usuario = User::find(auth()->id());
+        
+        $usuario->nombre = $request->nombre;
+        $usuario->apellido = $request->apellido;
+        $usuario->email = $request->email;
+
+        if($request->hasFile('img'))
+        {
+            $file = $request->file('img');
+            $uniqueFileName = $usuario->nombre . '.' . $file->getClientOriginalExtension();
+            $destino = public_path('img/perfil');
+            $request->img->move($destino,$uniqueFileName);         
+            $usuario->imagen_perfil = $uniqueFileName;
+       }
+
+        $usuario->save();
+
+        if( $usuario->principal =='pacientes' )//se valida el la pantalla principal
+        {
+            return redirect('/pacientes');
+        }
+  
+        if( $usuario->principal =='visor' )
+        {
+            return redirect('/visor');
+        }
+    }
+
     public function update(Request $request, $id)
     {
         //

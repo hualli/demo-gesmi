@@ -10,9 +10,6 @@
                 <div class="col-md-11">
                   <h1>Paciente: {{$paciente->apellido}}, {{$paciente->nombre}}</h1>
                 </div>
-                <div class="col-md-1 d-flex">
-                  <a href="{{ route('consultas.nueva', $paciente->id) }}" class="btn btn-primary btn-block ml-auto"><i class="fas fa-plus"></i></a>
-                </div>
               </div>
             </div><!-- /.container-fluid -->
           </section>

@@ -27,11 +27,16 @@
                     <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
                       <div class="form-group">
                         <select name="usuario" id="usuario" class="form-control">
-                          <option value="0">Seleccione un M&eacute;dico</option>
+                          <option value="">Seleccione un M&eacute;dico</option>
                           @foreach ($usuarios as $usuario)
                           <option value="{{ $usuario->id }}" >{{ $usuario->apellido }}, {{ $usuario->nombre }}</option>
                           @endforeach
                         </select>
+                         @if ($errors->has('usuario'))
+                          <div class="alert alert-danger">
+                            {{ $errors->first('usuario') }}
+                          </div>
+                          @endif
                       </div>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2 col-xl-2">
@@ -103,7 +108,7 @@
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Cancelar Turno</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Turno</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                     </button>
@@ -208,7 +213,7 @@
                 $('#turnoModal').modal('toggle');
                 calendar.refetchEvents();
                 },
-              error:function(){alert("Hay un error");},
+              error:function(){alert("Error...Seleccione un Medico");},
             }
           );
         };

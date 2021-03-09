@@ -1,0 +1,111 @@
+User: admin
+Password: laprida785
+
+Cambios:
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Pacientes:
+
+Migration: 
+
+1) Cambie los campos nombre, apellido, dni y fecha de nacimiento ahora son obligatorios.
+
+Store: 
+
+1) Agrege un Requests a Pacientes, para la validacion de los campos obligatorios, (nombre, apellido, dni y fecha de hacimiento)
+
+2) Dni es unico, es sistema verifica al crear un Paciente si ese dni registrado con otro paciente
+
+3) Muestra Mensajes de Error debajo de cada input si no pasa las verificaciones
+
+4) si encuentra un error, lo muestra pero no borra los datos que ya habia ingresado para el store.
+
+Index:
+
+1) Agrege que aparte del nombre, se vea el dni, el telefon fijo y celular del paciente
+
+2) Agrege busquedas por los siguientes campos: apellido, dni.
+
+3) La busqueda por dni las ordena alfabeticamente.
+
+4) Elimine el aisgnar turno del index de pacientes
+
+Update
+
+1) Agrege un Requests a Pacientes, para la validacion de los campos obligatorios, (nombre, apellido, dni y fecha de hacimiento)
+
+2) Dni es unico, es sistema verifica al actualizar un Paciente si el dni esta registrado con otro paciente
+
+3) Muestra Mensajes de Error debajo de cada input si no pasa las verificaciones
+
+4) si encuentra un error, lo muestra pero no borra los datos que ya habia ingresado para el update
+
+Show:
+
+1) Agrege que debajo de los datos del paciente se vea el historial de turnos de ese paciente
+
+2) edad lo puse que se vea aparte de fecha de nacimiento
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Obras Sociales:
+
+Store: 
+
+1) Agrege un Requests a Obra Social para la validacion de los campos obligatorios, (nombre)
+
+2) El Nombre es unico, es sistema verifica al crear una Onra Social si ese nombre ya esta registrado
+
+3) Muestra Mensajes de Error debajo del input nombre si no pasa las verificaciones
+
+4) si encuentra un error, lo muestra pero no borra los datos que ya habia ingresado para el store.
+
+Index:
+
+1) Agrege que aparte del nombre, se vea el estado de la obra social.
+
+2) oculte el boton show obra social, era una pagina entera para mostrar un solo texto
+
+Update
+
+1) Agrege un Requests a Obra Social para la validacion de los campos obligatorios, (nombre)
+
+2) Nombre es unico, es sistema verifica al actualizar unaa obra social si ese nombre ya esta registrado con otro obra social
+
+3) Muestra Mensajes de Error debajo de cada input si no pasa las verificaciones
+
+4) si encuentra un error, lo muestra pero no borra los datos que ya habia ingresado para el update
+
+
+* Al ser un solo campo el nombre de la obra social, lo mejor seria que fuera en una ventana modal, el create y el edit*
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Visor
+
+Index:
+
+1) Agregado boton atender turno
+
+2) Agregado un Buscador por fecha, el medico puede ver los turnos por defecto del dia, pero puede buscar de cualquier otro dia
+
+3) Cambie que solo permita atender o cancelar turnos que estan en estado "Pendiente", antes podias cancelar turnos atendidos.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Turnos:
+
+1) Solo permite cancelar los turnos que estan en estado "Pendiente", antes podias cancelar turnos atendidos,
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Consultas:
+
+Show
+
+1) Quite el boton que permitia crear una nueva consulta.
+
+2) El sistema no registraba el motivo de la consulta, ya lo corregi
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
