@@ -28,6 +28,7 @@ class PacienteController extends Controller
       else{
         $pacientes = Paciente::where('estado','like','habilitado')
         ->orderBy('apellido', 'ASC')
+        ->orderBy('nombre', 'ASC')
         ->paginate(10);
       }
 
