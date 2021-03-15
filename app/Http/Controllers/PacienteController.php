@@ -23,6 +23,7 @@ class PacienteController extends Controller
         $pacientes = Paciente::where('estado','like','habilitado')
         ->where($searchCondicion, 'LIKE', '%'.$searchText.'%')
         ->orderBy('apellido', 'ASC')
+        ->orderBy('nombre', 'ASC')
         ->paginate(10);
       }
       else{
