@@ -13,14 +13,6 @@ class TipoConsultaTableSeeder extends Seeder
     public function run()
     {
       TipoConsulta::create([
-          'nombre' => 'Láser de Depilación',
-      ]);
-
-      TipoConsulta::create([
-          'nombre' => 'Láser Spectra',
-      ]);
-
-      TipoConsulta::create([
           'nombre' => 'Consultas Clínicas',
       ]);
 

@@ -44,7 +44,7 @@ class PermissionTableSeeder extends Seeder
           'nombre' => 'Admin',
           'apellido' => 'Admin',
           'username' => 'admin',
-          'password' => Hash::make('laprida785'),
+          'password' => Hash::make('admin'),
           'email' => 'usuario@admin.com',
       ]);
 
